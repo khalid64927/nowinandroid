@@ -21,14 +21,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.google.samples.apps.nowinandroid.core.navigation.NiaNavigationDestination
-import com.google.samples.apps.nowinandroid.feature.author.navigation.AuthorDestination
-import com.google.samples.apps.nowinandroid.feature.author.navigation.authorGraph
-import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.bookmarksGraph
-import com.google.samples.apps.nowinandroid.feature.foryou.navigation.ForYouDestination
-import com.google.samples.apps.nowinandroid.feature.foryou.navigation.forYouGraph
-import com.google.samples.apps.nowinandroid.feature.interests.navigation.interestsGraph
-import com.google.samples.apps.nowinandroid.feature.topic.navigation.TopicDestination
-import com.google.samples.apps.nowinandroid.feature.topic.navigation.topicGraph
+//import com.google.samples.apps.nowinandroid.feature.author.navigation.AuthorDestination
+//import com.google.samples.apps.nowinandroid.feature.author.navigation.authorGraph
+//import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.bookmarksGraph
+//import com.google.samples.apps.nowinandroid.feature.foryou.navigation.ForYouDestination
+//import com.google.samples.apps.nowinandroid.feature.foryou.navigation.forYouGraph
+//import com.google.samples.apps.nowinandroid.feature.interests.navigation.interestsGraph
+//import com.google.samples.apps.nowinandroid.feature.topic.navigation.TopicDestination
+//import com.google.samples.apps.nowinandroid.feature.topic.navigation.topicGraph
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at
@@ -43,30 +43,31 @@ fun NiaNavHost(
     onNavigateToDestination: (NiaNavigationDestination, String) -> Unit,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
-    startDestination: String = ForYouDestination.route
+    //startDestination: String = ForYouDestination.route
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination,
+        startDestination = "",
+        //startDestination = startDestination,
         modifier = modifier,
     ) {
-        forYouGraph()
-        bookmarksGraph()
-        interestsGraph(
-            navigateToTopic = {
-                onNavigateToDestination(
-                    TopicDestination, TopicDestination.createNavigationRoute(it)
-                )
-            },
-            navigateToAuthor = {
-                onNavigateToDestination(
-                    AuthorDestination, AuthorDestination.createNavigationRoute(it)
-                )
-            },
-            nestedGraphs = {
-                topicGraph(onBackClick)
-                authorGraph(onBackClick)
-            }
-        )
+//        forYouGraph()
+//        bookmarksGraph()
+//        interestsGraph(
+//            navigateToTopic = {
+//                onNavigateToDestination(
+//                    TopicDestination, TopicDestination.createNavigationRoute(it)
+//                )
+//            },
+//            navigateToAuthor = {
+//                onNavigateToDestination(
+//                    AuthorDestination, AuthorDestination.createNavigationRoute(it)
+//                )
+//            },
+//            nestedGraphs = {
+//                topicGraph(onBackClick)
+//                authorGraph(onBackClick)
+//            }
+//        )
     }
 }

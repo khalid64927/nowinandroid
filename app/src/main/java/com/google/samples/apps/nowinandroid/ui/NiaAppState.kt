@@ -29,17 +29,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.tracing.trace
-import com.google.samples.apps.nowinandroid.core.designsystem.icon.Icon.DrawableResourceIcon
-import com.google.samples.apps.nowinandroid.core.designsystem.icon.Icon.ImageVectorIcon
-import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
+//import com.google.samples.apps.nowinandroid.core.designsystem.icon.Icon.DrawableResourceIcon
+//import com.google.samples.apps.nowinandroid.core.designsystem.icon.Icon.ImageVectorIcon
+//import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
 import com.google.samples.apps.nowinandroid.core.navigation.NiaNavigationDestination
 import com.google.samples.apps.nowinandroid.core.ui.JankMetricDisposableEffect
-import com.google.samples.apps.nowinandroid.feature.bookmarks.R as bookmarksR
-import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.BookmarksDestination
-import com.google.samples.apps.nowinandroid.feature.foryou.R as forYouR
-import com.google.samples.apps.nowinandroid.feature.foryou.navigation.ForYouDestination
-import com.google.samples.apps.nowinandroid.feature.interests.R as interestsR
-import com.google.samples.apps.nowinandroid.feature.interests.navigation.InterestsDestination
+//import com.google.samples.apps.nowinandroid.feature.bookmarks.R as bookmarksR
+//import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.BookmarksDestination
+//import com.google.samples.apps.nowinandroid.feature.foryou.R as forYouR
+//import com.google.samples.apps.nowinandroid.feature.foryou.navigation.ForYouDestination
+//import com.google.samples.apps.nowinandroid.feature.interests.R as interestsR
+//import com.google.samples.apps.nowinandroid.feature.interests.navigation.InterestsDestination
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination
 
 @Composable
@@ -73,27 +73,27 @@ class NiaAppState(
      * Top level destinations to be used in the BottomBar and NavRail
      */
     val topLevelDestinations: List<TopLevelDestination> = listOf(
-        TopLevelDestination(
-            route = ForYouDestination.route,
-            destination = ForYouDestination.destination,
-            selectedIcon = DrawableResourceIcon(NiaIcons.Upcoming),
-            unselectedIcon = DrawableResourceIcon(NiaIcons.UpcomingBorder),
-            iconTextId = forYouR.string.for_you
-        ),
-        TopLevelDestination(
-            route = BookmarksDestination.route,
-            destination = BookmarksDestination.destination,
-            selectedIcon = DrawableResourceIcon(NiaIcons.Bookmarks),
-            unselectedIcon = DrawableResourceIcon(NiaIcons.BookmarksBorder),
-            iconTextId = bookmarksR.string.saved
-        ),
-        TopLevelDestination(
-            route = InterestsDestination.route,
-            destination = InterestsDestination.destination,
-            selectedIcon = ImageVectorIcon(NiaIcons.Grid3x3),
-            unselectedIcon = ImageVectorIcon(NiaIcons.Grid3x3),
-            iconTextId = interestsR.string.interests
-        )
+//        TopLevelDestination(
+//            route = ForYouDestination.route,
+//            destination = ForYouDestination.destination,
+//            selectedIcon = DrawableResourceIcon(NiaIcons.Upcoming),
+//            unselectedIcon = DrawableResourceIcon(NiaIcons.UpcomingBorder),
+//            iconTextId = forYouR.string.for_you
+//        ),
+//        TopLevelDestination(
+//            route = BookmarksDestination.route,
+//            destination = BookmarksDestination.destination,
+//            selectedIcon = DrawableResourceIcon(NiaIcons.Bookmarks),
+//            unselectedIcon = DrawableResourceIcon(NiaIcons.BookmarksBorder),
+//            iconTextId = bookmarksR.string.saved
+//        ),
+//        TopLevelDestination(
+//            route = InterestsDestination.route,
+//            destination = InterestsDestination.destination,
+//            selectedIcon = ImageVectorIcon(NiaIcons.Grid3x3),
+//            unselectedIcon = ImageVectorIcon(NiaIcons.Grid3x3),
+//            iconTextId = interestsR.string.interests
+//        )
     )
 
     /**

@@ -93,17 +93,17 @@ android {
 }
 
 dependencies {
-    implementation(project(":feature:author"))
-    implementation(project(":feature:interests"))
-    implementation(project(":feature:foryou"))
-    implementation(project(":feature:bookmarks"))
-    implementation(project(":feature:topic"))
+//    implementation(project(":feature:author"))
+//    implementation(project(":feature:interests"))
+//    implementation(project(":feature:foryou"))
+//    implementation(project(":feature:bookmarks"))
+//    implementation(project(":feature:topic"))
 
     implementation(project(":core:ui"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:navigation"))
 
-    implementation(project(":sync"))
+    //implementation(project(":sync"))
 
     androidTestImplementation(project(":core:testing"))
     androidTestImplementation(project(":core:datastore-test"))

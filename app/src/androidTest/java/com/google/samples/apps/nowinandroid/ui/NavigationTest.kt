@@ -69,14 +69,14 @@ class NavigationTest {
 
     @Before
     fun setup() {
-        composeTestRule.activity.apply {
-            done = getString(R.string.done)
-            navigateUp = getString(R.string.navigate_up)
-            forYouLoading = getString(R.string.for_you_loading)
-            forYou = getString(R.string.for_you)
-            interests = getString(R.string.interests)
-            sampleTopic = "Headlines"
-        }
+//        composeTestRule.activity.apply {
+//            done = getString(R.string.done)
+//            navigateUp = getString(R.string.navigate_up)
+//            forYouLoading = getString(R.string.for_you_loading)
+//            forYou = getString(R.string.for_you)
+//            interests = getString(R.string.interests)
+//            sampleTopic = "Headlines"
+//        }
     }
 
     @Test
