@@ -188,6 +188,7 @@ fun NiaTheme(
     androidTheme: Boolean = false,
     content: @Composable() () -> Unit
 ) {
+    // find the right theme
     val colorScheme = when {
         dynamicColor -> {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -201,6 +202,7 @@ fun NiaTheme(
         else -> if (darkTheme) DarkDefaultColorScheme else LightDefaultColorScheme
     }
 
+    // find the right gradient color
     val defaultGradientColors = GradientColors()
     val gradientColors = when {
         dynamicColor -> {
@@ -214,6 +216,7 @@ fun NiaTheme(
         else -> if (darkTheme) defaultGradientColors else LightDefaultGradientColors
     }
 
+    // find the right background
     val defaultBackgroundTheme = BackgroundTheme(
         color = colorScheme.surface,
         tonalElevation = 2.dp
@@ -224,6 +227,8 @@ fun NiaTheme(
         else -> defaultBackgroundTheme
     }
 
+
+    // finally set the Theme for the App
     CompositionLocalProvider(
         LocalGradientColors provides gradientColors,
         LocalBackgroundTheme provides backgroundTheme

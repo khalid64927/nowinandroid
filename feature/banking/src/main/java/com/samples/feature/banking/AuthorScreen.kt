@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.samples.feature.author
+package com.samples.feature.banking
 
 import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.layout.Arrangement
@@ -60,6 +60,9 @@ import com.google.samples.apps.nowinandroid.core.model.data.previewAuthors
 import com.google.samples.apps.nowinandroid.core.model.data.previewNewsResources
 import com.google.samples.apps.nowinandroid.core.ui.DevicePreviews
 import com.google.samples.apps.nowinandroid.core.ui.newsResourceCardItems
+import com.samples.feature.banking.AuthorUiState.Error
+import com.samples.feature.banking.AuthorUiState.Success
+import com.samples.feature.banking.NewsUiState.Loading
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
@@ -107,10 +110,10 @@ internal fun AuthorScreen(
                     )
                 }
             }
-            AuthorUiState.Error -> {
+            Error -> {
                 TODO()
             }
-            is AuthorUiState.Success -> {
+            is Success -> {
                 item {
                     AuthorToolbar(
                         onBackClick = onBackClick,
@@ -183,7 +186,7 @@ private fun LazyListScope.authorCards(
                 itemModifier = Modifier.padding(24.dp)
             )
         }
-        is NewsUiState.Loading -> item {
+        is Loading -> item {
             NiaLoadingWheel(contentDesc = "Loading news") // TODO
         }
         else -> item {
@@ -233,7 +236,7 @@ fun AuthorScreenPopulated() {
     NiaTheme {
         NiaBackground {
             AuthorScreen(
-                authorUiState = AuthorUiState.Success(FollowableAuthor(previewAuthors[0], false)),
+                authorUiState = Success(FollowableAuthor(previewAuthors[0], false)),
                 newsUiState = NewsUiState.Success(
                     previewNewsResources.mapIndexed { index, newsResource ->
                         SaveableNewsResource(
@@ -257,7 +260,7 @@ fun AuthorScreenLoading() {
         NiaBackground {
             AuthorScreen(
                 authorUiState = AuthorUiState.Loading,
-                newsUiState = NewsUiState.Loading,
+                newsUiState = Loading,
                 onBackClick = {},
                 onFollowClick = {},
                 onBookmarkChanged = { _, _ -> },

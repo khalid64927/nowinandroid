@@ -15,6 +15,7 @@
  */
 
 buildscript {
+    val compose_ui_version by extra("1.2.0")
     repositories {
         google()
         mavenCentral()
@@ -32,4 +33,5 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.secrets) apply false
     alias(libs.plugins.spotless) apply false
+    id("org.jetbrains.kotlin.android") version "1.7.0" apply false
 }
