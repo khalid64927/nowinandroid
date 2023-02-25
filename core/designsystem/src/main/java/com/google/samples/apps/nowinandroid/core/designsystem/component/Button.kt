@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.nowinandroid.core.designsystem.component
 
+import android.widget.TextView
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -24,12 +25,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
 
 /**
  * Now in Android filled button with generic content slot. Wraps Material 3 [Button].
@@ -200,6 +205,8 @@ fun NiaTextButton(
     )
 }
 
+
+
 /**
  * Now in Android text button with text and icon content slots.
  *
@@ -272,3 +279,68 @@ object NiaButtonDefaults {
     // OutlinedButton default border width isn't exposed via ButtonDefaults
     val OutlinedButtonBorderWidth = 1.dp
 }
+
+
+// Button Previews
+@Preview
+@Composable
+fun NiaButtonPreview(){
+    NiaButton(onClick = {}){
+        Text(text = "Enabled")
+    }
+}
+
+@Preview
+@Composable
+fun NiaButtonLeadingIconPreview(){
+    NiaButton(
+        onClick = {},
+        text = { Text(text = "Enabled") },
+        leadingIcon = {
+            Icon(imageVector = NiaIcons.Add, contentDescription = null)
+        },
+    )
+}
+
+@Preview
+@Composable
+fun NiaOutlinedButtonPreview(){
+    NiaOutlinedButton(onClick = {}) {
+        Text(text = "Enabled")
+    }
+}
+
+@Preview
+@Composable
+fun NiaOutlinedButtonLeadingIconPreview(){
+    NiaOutlinedButton(
+        onClick = {},
+        text = { Text(text = "Enabled") },
+        leadingIcon = {
+            Icon(imageVector = NiaIcons.Add, contentDescription = null)
+        },
+    )
+}
+
+@Preview
+@Composable
+fun NiaTextButtonPreview(){
+    NiaTextButton(onClick = {}){
+        Text(text = "Enabled")
+    }
+}
+
+@Preview
+@Composable
+fun NiaTextButtonLeadingIconPreview(){
+    NiaTextButton(
+        onClick = {},
+        enabled = false,
+        text = { Text(text = "Disabled") },
+        leadingIcon = {
+            Icon(imageVector = NiaIcons.Add, contentDescription = null)
+        },
+    )
+}
+
+

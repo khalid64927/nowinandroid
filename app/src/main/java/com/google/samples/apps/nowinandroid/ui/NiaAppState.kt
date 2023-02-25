@@ -35,12 +35,12 @@ import androidx.navigation.navOptions
 import androidx.tracing.trace
 import com.google.samples.apps.nowinandroid.core.data.util.NetworkMonitor
 import com.google.samples.apps.nowinandroid.core.ui.TrackDisposableJank
-import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.bookmarksRoute
-import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.navigateToBookmarks
-import com.google.samples.apps.nowinandroid.feature.foryou.navigation.forYouNavigationRoute
-import com.google.samples.apps.nowinandroid.feature.foryou.navigation.navigateToForYou
-import com.google.samples.apps.nowinandroid.feature.interests.navigation.interestsRoute
-import com.google.samples.apps.nowinandroid.feature.interests.navigation.navigateToInterestsGraph
+//import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.bookmarksRoute
+//import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.navigateToBookmarks
+//import com.google.samples.apps.nowinandroid.feature.foryou.navigation.forYouNavigationRoute
+//import com.google.samples.apps.nowinandroid.feature.foryou.navigation.navigateToForYou
+//import com.google.samples.apps.nowinandroid.feature.interests.navigation.interestsRoute
+//import com.google.samples.apps.nowinandroid.feature.interests.navigation.navigateToInterestsGraph
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination.BOOKMARKS
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination.FOR_YOU
@@ -76,9 +76,9 @@ class NiaAppState(
 
     val currentTopLevelDestination: TopLevelDestination?
         @Composable get() = when (currentDestination?.route) {
-            forYouNavigationRoute -> FOR_YOU
-            bookmarksRoute -> BOOKMARKS
-            interestsRoute -> INTERESTS
+//            forYouNavigationRoute -> FOR_YOU
+//            bookmarksRoute -> BOOKMARKS
+//            interestsRoute -> INTERESTS
             else -> null
         }
 
@@ -128,11 +128,11 @@ class NiaAppState(
                 restoreState = true
             }
 
-            when (topLevelDestination) {
-                FOR_YOU -> navController.navigateToForYou(topLevelNavOptions)
-                BOOKMARKS -> navController.navigateToBookmarks(topLevelNavOptions)
-                INTERESTS -> navController.navigateToInterestsGraph(topLevelNavOptions)
-            }
+//            when (topLevelDestination) {
+//                FOR_YOU -> navController.navigateToForYou(topLevelNavOptions)
+//                BOOKMARKS -> navController.navigateToBookmarks(topLevelNavOptions)
+//                INTERESTS -> navController.navigateToInterestsGraph(topLevelNavOptions)
+//            }
         }
     }
 

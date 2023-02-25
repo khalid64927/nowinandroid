@@ -90,11 +90,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":feature:interests"))
-    implementation(project(":feature:foryou"))
-    implementation(project(":feature:bookmarks"))
-    implementation(project(":feature:topic"))
-    implementation(project(":feature:settings"))
+//    implementation(project(":feature:interests"))
+//    implementation(project(":feature:foryou"))
+//    implementation(project(":feature:bookmarks"))
+//    implementation(project(":feature:topic"))
+//    implementation(project(":feature:settings"))
 
     implementation(project(":core:common"))
     implementation(project(":core:ui"))
@@ -102,7 +102,7 @@ dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:model"))
 
-    implementation(project(":sync:work"))
+    //implementation(project(":sync:work"))
 
     androidTestImplementation(project(":core:testing"))
     androidTestImplementation(project(":core:datastore-test"))
