@@ -17,12 +17,18 @@
 package com.google.samples.apps.nowinandroid.core.designsystem.component
 
 import androidx.compose.material3.FilledIconToggleButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import com.google.samples.apps.nowinandroid.core.designsystem.R
+import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
 
 /**
  * Now in Android toggle button with icon and checked icon content slots. Wraps Material 3
@@ -75,4 +81,56 @@ object NiaIconButtonDefaults {
     // TODO: File bug
     // IconToggleButton disabled container alpha not exposed by IconButtonDefaults
     const val DisabledIconButtonContainerAlpha = 0.12f
+}
+
+// preview of this component
+
+@Preview
+@Composable
+fun NiaIconToggleButtonCheckedPreview(){
+    val isBookmarked = true
+    val onClick:()-> Unit = {}
+    val modifier = Modifier
+    NiaIconToggleButton(
+        checked = isBookmarked,
+        onCheckedChange = { onClick() },
+        modifier = modifier,
+        icon = {
+            Icon(
+                painter = painterResource(NiaIcons.BookmarkBorder),
+                contentDescription = stringResource(R.string.bookmark),
+            )
+        },
+        checkedIcon = {
+            Icon(
+                painter = painterResource(NiaIcons.Bookmark),
+                contentDescription = stringResource(R.string.unbookmark),
+            )
+        },
+    )
+}
+
+@Preview
+@Composable
+fun NiaIconToggleButtonUncheckedPreview(){
+    val isBookmarked = false
+    val onClick:()-> Unit = {}
+    val modifier = Modifier
+    NiaIconToggleButton(
+        checked = isBookmarked,
+        onCheckedChange = { onClick() },
+        modifier = modifier,
+        icon = {
+            Icon(
+                painter = painterResource(NiaIcons.BookmarkBorder),
+                contentDescription = stringResource(R.string.bookmark),
+            )
+        },
+        checkedIcon = {
+            Icon(
+                painter = painterResource(NiaIcons.Bookmark),
+                contentDescription = stringResource(R.string.unbookmark),
+            )
+        },
+    )
 }

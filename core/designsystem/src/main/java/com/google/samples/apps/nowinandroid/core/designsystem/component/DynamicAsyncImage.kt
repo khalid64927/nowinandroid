@@ -16,11 +16,17 @@
 
 package com.google.samples.apps.nowinandroid.core.designsystem.component
 
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.google.samples.apps.nowinandroid.core.designsystem.R
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.LocalTintTheme
 
 /**
@@ -41,4 +47,19 @@ fun DynamicAsyncImage(
         colorFilter = if (iconTint != null) ColorFilter.tint(iconTint) else null,
         modifier = modifier,
     )
+}
+
+@Preview
+@Composable
+fun dynamicAsyncImagePreview(){
+    DynamicAsyncImage(
+        // TODO b/228077205, show loading image visual instead of static placeholder
+        placeholder = painterResource(R.drawable.ic_bookmark),
+        imageUrl = "",
+        contentDescription = null, // decorative
+        modifier = Modifier
+            .padding(10.dp)
+            .size(32.dp),
+    )
+
 }
