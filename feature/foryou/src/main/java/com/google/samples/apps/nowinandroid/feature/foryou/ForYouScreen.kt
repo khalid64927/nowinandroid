@@ -113,11 +113,11 @@ internal fun ForYouRoute(
 ) {
     val onboardingUiState by viewModel.onboardingUiState.collectAsStateWithLifecycle()
     val feedState by viewModel.feedState.collectAsStateWithLifecycle()
-    val isSyncing by viewModel.isSyncing.collectAsStateWithLifecycle()
+    //val isSyncing by viewModel.isSyncing.collectAsStateWithLifecycle()
     val deepLinkedUserNewsResource by viewModel.deepLinkedNewsResource.collectAsStateWithLifecycle()
 
     ForYouScreen(
-        isSyncing = isSyncing,
+        isSyncing = false, //isSyncing,
         onboardingUiState = onboardingUiState,
         feedState = feedState,
         deepLinkedUserNewsResource = deepLinkedUserNewsResource,
@@ -489,6 +489,9 @@ private fun feedItemsSize(
     val feedSize = when (feedState) {
         NewsFeedUiState.Loading -> 0
         is NewsFeedUiState.Success -> feedState.feed.size
+        else -> {
+            0 // default value
+        }
     }
     val onboardingSize = when (onboardingUiState) {
         OnboardingUiState.Loading,

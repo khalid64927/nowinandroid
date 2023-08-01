@@ -19,9 +19,9 @@ package com.google.samples.apps.nowinandroid.navigation
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.google.samples.apps.nowinandroid.R
 import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
-import com.google.samples.apps.nowinandroid.feature.bookmarks.R as bookmarksR
+//import com.google.samples.apps.nowinandroid.feature.bookmarks.R as bookmarksR
 import com.google.samples.apps.nowinandroid.feature.foryou.R as forYouR
-import com.google.samples.apps.nowinandroid.feature.interests.R as interestsR
+//import com.google.samples.apps.nowinandroid.feature.interests.R as interestsR
 
 /**
  * Type for the top level destinations in the application. Each of these destinations
@@ -40,7 +40,7 @@ enum class TopLevelDestination(
         iconTextId = forYouR.string.for_you,
         titleTextId = R.string.app_name,
     ),
-    BOOKMARKS(
+    /*BOOKMARKS(
         selectedIcon = NiaIcons.Bookmarks,
         unselectedIcon = NiaIcons.BookmarksBorder,
         iconTextId = bookmarksR.string.saved,
@@ -51,5 +51,5 @@ enum class TopLevelDestination(
         unselectedIcon = NiaIcons.Grid3x3,
         iconTextId = interestsR.string.interests,
         titleTextId = interestsR.string.interests,
-    ),
+    ),*/
 }

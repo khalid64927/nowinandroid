@@ -80,12 +80,12 @@ android {
 }
 
 dependencies {
-    implementation(project(":feature:interests"))
+    //implementation(project(":feature:interests"))
     implementation(project(":feature:foryou"))
-    implementation(project(":feature:bookmarks"))
+    /*implementation(project(":feature:bookmarks"))
     implementation(project(":feature:topic"))
     implementation(project(":feature:search"))
-    implementation(project(":feature:settings"))
+    implementation(project(":feature:settings"))*/
 
     implementation(project(":core:common"))
     implementation(project(":core:ui"))
@@ -94,7 +94,7 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:analytics"))
 
-    implementation(project(":sync:work"))
+    //implementation(project(":sync:work"))
 
     androidTestImplementation(project(":core:testing"))
     androidTestImplementation(project(":core:datastore-test"))

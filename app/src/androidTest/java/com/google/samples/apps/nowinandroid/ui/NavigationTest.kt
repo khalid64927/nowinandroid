@@ -49,10 +49,10 @@ import org.junit.Test
 import org.junit.rules.TemporaryFolder
 import javax.inject.Inject
 import kotlin.properties.ReadOnlyProperty
-import com.google.samples.apps.nowinandroid.feature.bookmarks.R as BookmarksR
+/*import com.google.samples.apps.nowinandroid.feature.bookmarks.R as BookmarksR
 import com.google.samples.apps.nowinandroid.feature.foryou.R as FeatureForyouR
 import com.google.samples.apps.nowinandroid.feature.interests.R as FeatureInterestsR
-import com.google.samples.apps.nowinandroid.feature.settings.R as SettingsR
+import com.google.samples.apps.nowinandroid.feature.settings.R as SettingsR*/
 
 /**
  * Tests all the navigation flows that are handled by the navigation library.
@@ -62,27 +62,27 @@ class NavigationTest {
 
     /**
      * Manages the components' state and is used to perform injection on your test
-     */
+     *//*
     @get:Rule(order = 0)
     val hiltRule = HiltAndroidRule(this)
 
-    /**
+    *//**
      * Create a temporary folder used to create a Data Store file. This guarantees that
      * the file is removed in between each test, preventing a crash.
-     */
+     *//*
     @BindValue
     @get:Rule(order = 1)
     val tmpFolder: TemporaryFolder = TemporaryFolder.builder().assureDeletion().build()
 
-    /**
+    *//**
      * Grant [android.Manifest.permission.POST_NOTIFICATIONS] permission.
-     */
+     *//*
     @get:Rule(order = 2)
     val postNotificationsPermission = GrantPostNotificationsPermissionRule()
 
-    /**
+    *//**
      * Use the primary activity to initialize the app normally.
-     */
+     *//*
     @get:Rule(order = 3)
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
@@ -117,10 +117,10 @@ class NavigationTest {
     // TODO: implement tests related to navigation & resetting of destinations (b/213307564)
     // Restoring content should be tested with another tab than the For You one, as that will
     // still succeed even when restoring state is turned off.
-    /**
+    *//**
      * When navigating between the different top level destinations, we should restore the state
      * of previously visited destinations.
-     */
+     *//*
     @Test
     fun navigationBar_navigateToPreviouslySelectedTab_restoresContent() {
         composeTestRule.apply {
@@ -135,9 +135,9 @@ class NavigationTest {
         }
     }
 
-    /**
+    *//**
      * When reselecting a tab, it should show that tab's start destination and restore its state.
-     */
+     *//*
     @Test
     fun navigationBar_reselectTab_keepsState() {
         composeTestRule.apply {
@@ -158,9 +158,9 @@ class NavigationTest {
 //        // THEN the Topics destination shows in the same scrolled state
 //    }
 
-    /*
+    *//*
      * Top level destinations should never show an up affordance.
-     */
+     *//*
     @Test
     fun topLevelDestinations_doNotShowUpArrow() {
         composeTestRule.apply {
@@ -231,9 +231,9 @@ class NavigationTest {
         }
     }
 
-    /*
+    *//*
      * There should always be at most one instance of a top-level destination at the same time.
-     */
+     *//*
     @Test(expected = NoActivityResumedException::class)
     fun homeDestination_back_quitsApp() {
         composeTestRule.apply {
@@ -247,10 +247,10 @@ class NavigationTest {
         }
     }
 
-    /*
+    *//*
      * When pressing back from any top level destination except "For you", the app navigates back
      * to the "For you" destination, no matter which destinations you visited in between.
-     */
+     *//*
     @Test
     fun navigationBar_backFromAnyDestination_returnsToForYou() {
         composeTestRule.apply {
@@ -283,5 +283,5 @@ class NavigationTest {
             // Verify we're not in the list of interests
             onNodeWithTag("interests:topics").assertDoesNotExist()
         }
-    }
+    }*/
 }

@@ -33,17 +33,17 @@ import androidx.tracing.trace
 import com.google.samples.apps.nowinandroid.core.data.repository.UserNewsResourceRepository
 import com.google.samples.apps.nowinandroid.core.data.util.NetworkMonitor
 import com.google.samples.apps.nowinandroid.core.ui.TrackDisposableJank
-import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.bookmarksRoute
-import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.navigateToBookmarks
+/*import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.bookmarksRoute
+import com.google.samples.apps.nowinandroid.feature.bookmarks.navigation.navigateToBookmarks*/
 import com.google.samples.apps.nowinandroid.feature.foryou.navigation.forYouNavigationRoute
 import com.google.samples.apps.nowinandroid.feature.foryou.navigation.navigateToForYou
-import com.google.samples.apps.nowinandroid.feature.interests.navigation.interestsRoute
+/*import com.google.samples.apps.nowinandroid.feature.interests.navigation.interestsRoute
 import com.google.samples.apps.nowinandroid.feature.interests.navigation.navigateToInterestsGraph
-import com.google.samples.apps.nowinandroid.feature.search.navigation.navigateToSearch
+import com.google.samples.apps.nowinandroid.feature.search.navigation.navigateToSearch*/
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination
-import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination.BOOKMARKS
+//import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination.BOOKMARKS
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination.FOR_YOU
-import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination.INTERESTS
+//import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination.INTERESTS
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -92,8 +92,8 @@ class NiaAppState(
     val currentTopLevelDestination: TopLevelDestination?
         @Composable get() = when (currentDestination?.route) {
             forYouNavigationRoute -> FOR_YOU
-            bookmarksRoute -> BOOKMARKS
-            interestsRoute -> INTERESTS
+            /*bookmarksRoute -> BOOKMARKS
+            interestsRoute -> INTERESTS*/
             else -> null
         }
 
@@ -125,7 +125,7 @@ class NiaAppState(
             .combine(userNewsResourceRepository.observeAllBookmarked()) { forYouNewsResources, bookmarkedNewsResources ->
                 setOfNotNull(
                     FOR_YOU.takeIf { forYouNewsResources.any { !it.hasBeenViewed } },
-                    BOOKMARKS.takeIf { bookmarkedNewsResources.any { !it.hasBeenViewed } },
+                    //BOOKMARKS.takeIf { bookmarkedNewsResources.any { !it.hasBeenViewed } },
                 )
             }.stateIn(
                 coroutineScope,
@@ -156,16 +156,16 @@ class NiaAppState(
                 restoreState = true
             }
 
-            when (topLevelDestination) {
+            /*when (topLevelDestination) {
                 FOR_YOU -> navController.navigateToForYou(topLevelNavOptions)
                 BOOKMARKS -> navController.navigateToBookmarks(topLevelNavOptions)
                 INTERESTS -> navController.navigateToInterestsGraph(topLevelNavOptions)
-            }
+            }*/
         }
     }
 
     fun navigateToSearch() {
-        navController.navigateToSearch()
+        //navController.navigateToSearch()
     }
 }
 

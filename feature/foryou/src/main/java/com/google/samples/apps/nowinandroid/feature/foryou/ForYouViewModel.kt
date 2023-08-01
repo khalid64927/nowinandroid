@@ -44,7 +44,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ForYouViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
-    syncManager: SyncManager,
+    //syncManager: SyncManager,
     private val analyticsHelper: AnalyticsHelper,
     private val userDataRepository: UserDataRepository,
     userNewsResourceRepository: UserNewsResourceRepository,
@@ -76,12 +76,12 @@ class ForYouViewModel @Inject constructor(
             initialValue = null,
         )
 
-    val isSyncing = syncManager.isSyncing
+    val isSyncing = false /*syncManager.isSyncing
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
             initialValue = false,
-        )
+        )*/
 
     val feedState: StateFlow<NewsFeedUiState> =
         userNewsResourceRepository.observeAllForFollowedTopics()

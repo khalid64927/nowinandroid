@@ -74,10 +74,10 @@ import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaTopAp
 import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.GradientColors
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.LocalGradientColors
-import com.google.samples.apps.nowinandroid.feature.settings.SettingsDialog
+//import com.google.samples.apps.nowinandroid.feature.settings.SettingsDialog
 import com.google.samples.apps.nowinandroid.navigation.NiaNavHost
 import com.google.samples.apps.nowinandroid.navigation.TopLevelDestination
-import com.google.samples.apps.nowinandroid.feature.settings.R as settingsR
+//import com.google.samples.apps.nowinandroid.feature.settings.R as settingsR
 
 @OptIn(
     ExperimentalMaterial3Api::class,
@@ -97,9 +97,9 @@ fun NiaApp(
 ) {
     val shouldShowGradientBackground =
         appState.currentTopLevelDestination == TopLevelDestination.FOR_YOU
-    var showSettingsDialog by rememberSaveable {
-        mutableStateOf(false)
-    }
+//    var showSettingsDialog by rememberSaveable {
+//        mutableStateOf(false)
+//    }
 
     NiaBackground {
         NiaGradientBackground(
@@ -124,11 +124,11 @@ fun NiaApp(
                 }
             }
 
-            if (showSettingsDialog) {
-                SettingsDialog(
-                    onDismiss = { showSettingsDialog = false },
-                )
-            }
+//            if (showSettingsDialog) {
+//                SettingsDialog(
+//                    onDismiss = { showSettingsDialog = false },
+//                )
+//            }
 
             val unreadDestinations by appState.topLevelDestinationsWithUnreadResources.collectAsStateWithLifecycle()
 
@@ -143,7 +143,7 @@ fun NiaApp(
                 bottomBar = {
                     if (appState.shouldShowBottomBar) {
                         NiaBottomBar(
-                            destinations = appState.topLevelDestinations,
+                            destinations = emptyList(), //appState.topLevelDestinations,
                             destinationsWithUnreadResources = unreadDestinations,
                             onNavigateToDestination = appState::navigateToTopLevelDestination,
                             currentDestination = appState.currentDestination,
@@ -165,7 +165,7 @@ fun NiaApp(
                 ) {
                     if (appState.shouldShowNavRail) {
                         NiaNavRail(
-                            destinations = appState.topLevelDestinations,
+                            destinations = emptyList(), //appState.topLevelDestinations,
                             destinationsWithUnreadResources = unreadDestinations,
                             onNavigateToDestination = appState::navigateToTopLevelDestination,
                             currentDestination = appState.currentDestination,
@@ -182,17 +182,23 @@ fun NiaApp(
                             NiaTopAppBar(
                                 titleRes = destination.titleTextId,
                                 navigationIcon = NiaIcons.Search,
-                                navigationIconContentDescription = stringResource(
+                                "Settings"
+                                /*navigationIconContentDescription = stringResource(
                                     id = settingsR.string.top_app_bar_navigation_icon_description,
-                                ),
+                                )*/
+                                ,
                                 actionIcon = NiaIcons.Settings,
-                                actionIconContentDescription = stringResource(
+                                "Settings"
+                                /*actionIconContentDescription = stringResource(
                                     id = settingsR.string.top_app_bar_action_icon_description,
-                                ),
+                                )*/
+                                ,
                                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                                     containerColor = Color.Transparent,
                                 ),
-                                onActionClick = { showSettingsDialog = true },
+                                onActionClick = { 
+                                        //showSettingsDialog = true 
+                                                },
                                 onNavigationClick = { appState.navigateToSearch() },
                             )
                         }

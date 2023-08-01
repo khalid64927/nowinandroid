@@ -92,6 +92,8 @@ fun LazyGridScope.newsFeed(
                 )
             }
         }
+
+        else -> {}
     }
 }
 
