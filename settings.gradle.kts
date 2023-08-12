@@ -30,7 +30,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "nowinandroid"
+rootProject.name = "mercari-android-task"
 include(":app")
 include(":app-nia-catalog")
 include(":benchmarks")
@@ -50,12 +50,5 @@ include(":core:analytics")
 include(":core:notifications")
 
 include(":feature:foryou")
-//include(":feature:interests")
-//include(":feature:bookmarks")
-//include(":feature:topic")
-//include(":feature:search")
-//include(":feature:settings")
 include(":lint")
-/*include(":sync:work")
-include(":sync:sync-test")*/
 include(":ui-test-hilt-manifest")

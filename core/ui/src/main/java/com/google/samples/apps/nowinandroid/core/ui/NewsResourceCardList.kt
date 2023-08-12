@@ -23,7 +23,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
-import com.google.samples.apps.nowinandroid.core.analytics.LocalAnalyticsHelper
+import com.mercari.codechallenge.core.analytics.LocalAnalyticsHelper
 import com.google.samples.apps.nowinandroid.core.model.data.UserNewsResource
 
 /**

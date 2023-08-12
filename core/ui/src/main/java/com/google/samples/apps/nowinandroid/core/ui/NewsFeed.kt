@@ -39,8 +39,8 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
-import com.google.samples.apps.nowinandroid.core.analytics.LocalAnalyticsHelper
-import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
+import com.mercari.codechallenge.core.analytics.LocalAnalyticsHelper
+import com.mercari.codechallenge.core.designsystem.theme.NiaTheme
 import com.google.samples.apps.nowinandroid.core.model.data.UserNewsResource
 
 /**

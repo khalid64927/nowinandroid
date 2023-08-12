@@ -18,12 +18,12 @@ package com.google.samples.apps.nowinandroid.core.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import com.google.samples.apps.nowinandroid.core.analytics.AnalyticsEvent
-import com.google.samples.apps.nowinandroid.core.analytics.AnalyticsEvent.Param
-import com.google.samples.apps.nowinandroid.core.analytics.AnalyticsEvent.ParamKeys
-import com.google.samples.apps.nowinandroid.core.analytics.AnalyticsEvent.Types
-import com.google.samples.apps.nowinandroid.core.analytics.AnalyticsHelper
-import com.google.samples.apps.nowinandroid.core.analytics.LocalAnalyticsHelper
+import com.mercari.codechallenge.core.analytics.AnalyticsEvent
+import com.mercari.codechallenge.core.analytics.AnalyticsEvent.Param
+import com.mercari.codechallenge.core.analytics.AnalyticsEvent.ParamKeys
+import com.mercari.codechallenge.core.analytics.AnalyticsEvent.Types
+import com.mercari.codechallenge.core.analytics.AnalyticsHelper
+import com.mercari.codechallenge.core.analytics.LocalAnalyticsHelper
 
 /**
  * Classes and functions associated with analytics events for the UI.

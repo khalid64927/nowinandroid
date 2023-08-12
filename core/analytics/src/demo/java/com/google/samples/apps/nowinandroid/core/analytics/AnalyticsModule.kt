@@ -16,6 +16,8 @@
 
 package com.google.samples.apps.nowinandroid.core.analytics
 
+import com.mercari.codechallenge.core.analytics.AnalyticsHelper
+import com.mercari.codechallenge.core.analytics.StubAnalyticsHelper
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

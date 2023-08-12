@@ -17,9 +17,9 @@
 package com.google.samples.apps.nowinandroid.feature.foryou
 
 import androidx.lifecycle.SavedStateHandle
-import com.google.samples.apps.nowinandroid.core.analytics.AnalyticsEvent
-import com.google.samples.apps.nowinandroid.core.analytics.AnalyticsEvent.Param
-import com.google.samples.apps.nowinandroid.core.data.repository.CompositeUserNewsResourceRepository
+import com.mercari.codechallenge.core.analytics.AnalyticsEvent
+import com.mercari.codechallenge.core.analytics.AnalyticsEvent.Param
+import com.mercari.codechallenge.core.data.repository.CompositeUserNewsResourceRepository
 import com.google.samples.apps.nowinandroid.core.domain.GetFollowableTopicsUseCase
 import com.google.samples.apps.nowinandroid.core.model.data.FollowableTopic
 import com.google.samples.apps.nowinandroid.core.model.data.NewsResource
@@ -77,7 +77,6 @@ class ForYouViewModelTest {
     @Before
     fun setup() {
         viewModel = ForYouViewModel(
-            syncManager = syncManager,
             savedStateHandle = savedStateHandle,
             analyticsHelper = analyticsHelper,
             userDataRepository = userDataRepository,
@@ -113,20 +112,6 @@ class ForYouViewModelTest {
         collectJob2.cancel()
     }
 
-    @Test
-    fun stateIsLoadingWhenAppIsSyncingWithNoInterests() = runTest {
-        syncManager.setSyncing(true)
-
-        val collectJob =
-            launch(UnconfinedTestDispatcher()) { viewModel.isSyncing.collect() }
-
-        assertEquals(
-            true,
-            viewModel.isSyncing.value,
-        )
-
-        collectJob.cancel()
-    }
 
     @Test
     fun onboardingStateIsLoadingWhenTopicsAreLoading() = runTest {

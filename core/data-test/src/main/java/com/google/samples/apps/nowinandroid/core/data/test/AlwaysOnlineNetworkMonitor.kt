@@ -16,7 +16,7 @@
 
 package com.google.samples.apps.nowinandroid.core.data.test
 
-import com.google.samples.apps.nowinandroid.core.data.util.NetworkMonitor
+import com.mercari.codechallenge.core.data.util.NetworkMonitor
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject
