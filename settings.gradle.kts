@@ -50,5 +50,6 @@ include(":core:analytics")
 include(":core:notifications")
 
 include(":feature:foryou")
+include(":feature:listing")
 include(":lint")
 include(":ui-test-hilt-manifest")
